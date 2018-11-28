@@ -2,6 +2,7 @@ package com.eisa.arq.sol;
 
 import java.awt.AWTException;
 import java.awt.Robot;
+import java.awt.event.InputEvent;
 import java.util.LinkedList;
 
 /**
@@ -30,7 +31,9 @@ public class Worker implements Runnable
             {
                 if(a!=null && running)
                 {
-                    pressKey(a);
+                	if(a.mouseCoords!=null) mouseClick(a);
+                	else	if(a.key != 0) pressKey(a);
+                	else  try {Thread.sleep(a.delayAfter);} catch (InterruptedException ex) {System.err.println(ex);}
                 }
                 else
                 {
@@ -42,12 +45,19 @@ public class Worker implements Runnable
         }
     }
     
+    public synchronized void mouseClick(Action a)
+    {
+    	robot.mouseMove(a.mouseCoords[0], a.mouseCoords[1]);
+    	robot.mousePress(InputEvent.BUTTON1_MASK);
+		robot.mouseRelease(InputEvent.BUTTON1_MASK);
+        try {Thread.sleep(a.delayAfter);} catch (InterruptedException ex) {System.err.println(ex);}
+        
+    }
+    
     public synchronized void pressKey(Action a)
     {
         //if(a.key == java.awt.event.KeyEvent.VK_SPACE) System.out.println("Executing: key["+a.key+"] delayBetween("+a.delayBetween+") delayAfter("+a.delayAfter+")");
-        try {Thread.sleep(a.delayBefore);} catch (InterruptedException ex) {System.err.println(ex);}
         robot.keyPress(a.key);
-        try {Thread.sleep(a.delayBetween);} catch (InterruptedException ex) {System.err.println(ex);}
         robot.keyRelease(a.key);
         try {Thread.sleep(a.delayAfter);} catch (InterruptedException ex) {System.err.println(ex);}
         

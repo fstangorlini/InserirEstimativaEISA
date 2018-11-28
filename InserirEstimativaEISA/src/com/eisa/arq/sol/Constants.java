@@ -16,4 +16,5 @@ public class Constants
     public static final int _350 = 350;
     public static final int _450 = 450;
     public static final int _1500 = 1500;
+    public static final int _10000 = 10000;
 }

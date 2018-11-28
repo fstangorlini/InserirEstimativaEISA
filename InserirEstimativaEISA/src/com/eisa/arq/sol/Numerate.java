@@ -67,12 +67,11 @@ public final class Numerate
         } catch (IOException ex) {
             Logger.getLogger(Numerate.class.getName()).log(Level.SEVERE, null, ex);
         }
-        gui.appendText(null);
-        gui.appendText("Executado com sucesso\n");
-        gui.appendText("Nova pasta criada  : "+outputFolder.getAbsolutePath()+"\n");
-        gui.appendText("Arquivos criados   : "+countFiles+"\n");
-        gui.appendText("Pastas criadas     : "+countDirectories+"\n");
-        gui.appendText("Tempo de execuÃ§Ã£o  : "+((System.currentTimeMillis()-time1)/1000)+"s\n");
+        System.out.println("Executado com sucesso\n");
+        System.out.println("Nova pasta criada  : "+outputFolder.getAbsolutePath()+"\n");
+        System.out.println("Arquivos criados   : "+countFiles+"\n");
+        System.out.println("Pastas criadas     : "+countDirectories+"\n");
+        System.out.println("Tempo de execução  : "+((System.currentTimeMillis()-time1)/1000)+"s\n");
         
         
         

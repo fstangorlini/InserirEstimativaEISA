@@ -1,6 +1,7 @@
 package com.eisa.arq.sol;
 
 import java.awt.AWTException;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.util.LinkedList;
 
@@ -10,7 +11,6 @@ import java.util.LinkedList;
  */
 public class ActionSet1
 {
-    //Farms on The Royal Tomb of Al Sheder
     private LinkedList<Action> actions;
     private Thread thread;
     private Worker w;
@@ -20,103 +20,22 @@ public class ActionSet1
         actions = new LinkedList<>();
         
         
-        //Start in main menu, select multiplayer
-        actions.addLast(new Action(KeyEvent.VK_LEFT, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_LEFT, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_LEFT, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_LEFT, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_LEFT, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_RIGHT, Constants._50, Constants._50));
+        //Opens File
         
-        //Create a game
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_DOWN, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_DOWN, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_DOWN, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._500));
-        actions.addLast(new Action(KeyEvent.VK_DOWN, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_DOWN, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_DOWN, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_DOWN, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_DOWN, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
         
-        //Skip intro
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._1500));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
         
-        //Start script
-        actions.addLast(new Action(KeyEvent.VK_LEFT, 3500, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_UP, 820, Constants._50));
+        //Wait for excel to load
+        actions.addLast(new Action(Constants._10000));
         
-        actions.addLast(new Action(KeyEvent.VK_RIGHT, Constants._150, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_SPACE, Constants._50, Constants._800));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_RIGHT, Constants._150, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_SPACE, Constants._50, Constants._800));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_RIGHT, Constants._150, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_SPACE, Constants._50, Constants._800));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
+        //Click "Enable Content" x,y=[562,170] (excel maximizado @1360x760)
+        actions.addLast(new Action(new int[] {562,170}, Constants._350));
         
-        actions.addLast(new Action(KeyEvent.VK_RIGHT, Constants._450, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_SPACE, Constants._50, Constants._800));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._100, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_RIGHT, Constants._150, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_SPACE, Constants._50, Constants._800));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._100, Constants._50));
+        //Click "Distribuição do Plano" x,y=[633,696] (excel maximizado @1360x760) 
+        actions.addLast(new Action(new int[] {633,696}, Constants._150));
         
-        //Exit game
-        actions.addLast(new Action(KeyEvent.VK_ESCAPE, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_DOWN, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_DOWN, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_DOWN, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_DOWN, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_DOWN, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_DOWN, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_DOWN, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_DOWN, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_RIGHT, Constants._50, Constants._50));
-        actions.addLast(new Action(KeyEvent.VK_ENTER, Constants._50, 2000));
+        //Click "Distribuição do Plano" x,y=[633,281] (excel maximizado @1360x760)
+        actions.addLast(new Action(new int[] {633,281}, Constants._150));
+        
         
         
         //Start Action set
